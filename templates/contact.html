@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+<div class="text p-5">
+    <h4>Myanmar Art Gallery</h4>
+    <p>Address - No.14, Front Row, Bogyoke Aung San Market, Yangon, Myanmar.</p>
+    <p>Email - myanmarartgallery96@gmail.com</p>
+    <p>Phone Number - +959765538599 , +9595124422</p>
+</div>
+<div class="p-5 text">
+    <p class="p-3">Phyo Naing</p>
+    <a href="viber://chat?number=+959765538599" target="_blank" rel="noopener noreferrer">
+        <img src="{% static 'viber_logo.png' %}" alt="Viber Icon">
+        <p class="p-3">Click to start a conversation with us.</p>
+    </a>
+    <p class="p3">Min Thu</p>
+    <a href="viber://chat?number=+9595124422" target="_blank" rel="noopener noreferrer">
+        <img src="{% static 'viber_logo.png' %}" alt="Viber Icon">
+        <p class="p-3">Click to start a conversation with us.</p>
+    </a>
+
+</div>
+
+
+
+{% endblock %}

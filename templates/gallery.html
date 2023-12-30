@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="row gallery_container">
+    <div class="col-12 col-md-4">
+        <h3>
+            <a href="{% url 'standard' type='standard' %}">
+                Standard
+            </a>
+        </h3>
+        <div class="p-5">
+            <a href="{% url 'standard' type='standard' %}">
+                <img class="img-fluid" src="{% static 'standard\vertical\sga_sdv_75.jpg' %}" alt="">
+            </a>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-4">
+        <h3>
+            <a href="{% url 'special' type='special' %}">
+                Special
+            </a>
+        </h3>
+        <div class="p-5">
+            <a href="{% url 'special' type='special' %}">
+                <img class="img-fluid" src="{% static 'special\vertical\sga_spv_57.jpg' %}" alt="">
+            </a>
+        </div>
+
+    </div>
+    <div class="col-12 col-md-4">
+        <h3>
+            <a href="{% url 'custom' type='custom' %}">
+                Custom
+            </a>
+        </h3>
+        <div class="p-5">
+            <a href="{% url 'custom' type='custom' %}">
+                <img class="img-fluid" src="{% static 'custom\vertical\sga_ctv_8.jpg' %}" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

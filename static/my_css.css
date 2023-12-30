@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:link,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+.box {
+    background-color: #E1CC67;
+    text-align: center;
+}
+
+.text {
+    /* color: #986E2E; */
+    color: #734d1f;
+}
+
+
+
+.header {
+    background-color: #D89D3F;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header p {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (max-width: 800px) {
+
+    /* Media query for smaller screens */
+    .header {
+        flex-direction: column;
+        /* Change to vertical alignment for smaller screens */
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+.home_img_container {
+    padding: 50px;
+}
+
+.home_video_container {
+    padding: 50px;
+}
+
+.home_video_container video {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    background-color: #D89D3F;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer h5 {
+    margin-top: 8px;
+    padding: 20px;
+}
+
+.footer_dropdown {
+    background-color: #E1CC67;
+    appearance: none;
+    border: 1px solid #D89D3c;
+    padding: 5px;
+    width: 150px;
+    /* Set the width as needed */
+    margin-bottom: 10px;
+    outline: none;
+    color: white;
+}
+
+.footer button {
+    outline: none;
+    background-color: #E1CC67;
+    color: white;
+    padding: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+.gallery_container {
+    color: #734d1f;
+    padding: 50px;
+}
+
+.image-container {
+    display: flex;
+    padding: 30px;
+}
+
+.image-container img {
+    height: 400px;
+    /* Set a fixed height */
+    object-fit: contain;
+    /* Maintain aspect ratio */
+}
+
+.image-container img.modal-triggered {
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.image-container p {
+    padding: 20px;
+    color: #734d1f;
+}
+
+.modal-content {
+    background-color: #E1CC67;
+    color: #734d1f;
+}
+
+.modal-footer button {
+    background-color: #734d1f;
+    border: none;
+}
+
+.modal-footer a {
+    background-color: #734d1f;
+    border: none;
+    color: white;
+}
+
+.modal-footer a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.modal-body p {
+    margin: 0;
+    padding: 10px;
+}
+
+.paypal-button {
+    display: block;
+    background-color: transparent;
+    padding: 5px;
+    width: 300px;
+}

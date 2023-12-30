@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row home_img_container g-0">
+    <div class="col col-12 col-md-8 p-0 m-0">
+        <img class="img-fluid" src="{% static 'special/horizontal/sga_sph_1.jpg' %}" alt="">
+    </div>
+    <div class="col col-12 col-md-4 p-3 m-0 d-flex align-items-center">
+        <p class="text">Welcome to Myanmar Art Gallery! Right on the homepage, you'll spot a stunning puppet
+            pic made
+            with shiny gems from
+            Myanmar. It's a hit with folks from around the globe who dig our puppet shows!
+
+            But we're not stopping there. Our art party is just getting started. Soon, you'll see all sorts of cool
+            artsy stuff
+            alongside that gem puppet. We're talking a mix of different artworks that'll make your screen a vibrant
+            showcase. Get
+            ready to dive into Myanmar's art scene, where tradition meets a whole lot of creativity!</p>
+    </div>
+</div>
+<h3 class="text">Making Gems Art</h3>
+<div class="home_video_container">
+    <video controls>
+        <source src="{% static 'making_gems_art.mp4' %}">
+    </video>
+</div>
+
+
+{% endblock %}

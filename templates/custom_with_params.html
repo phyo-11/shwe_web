@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6 p-4">
+        <h4 class="text">
+            <a href="{% url 'custom_with_params'  type='custom' orientation='horizontal' %}">
+                Horizontal
+            </a>
+        </h4>
+    </div>
+    <div class="col-6 p-4">
+        <h4 class="text">
+            <a href="{% url 'custom_with_params' type='custom' orientation='vertical' %}">
+                Vertical
+            </a>
+        </h4>
+    </div>
+</div>
+<div class="row image-container">
+    {% for image in images %}
+    <div class="col-12 col-md-3 p-2">
+        <img class="img-fluid" src="{% static image.image_path %}">
+        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#myModal{{ forloop.counter }}">
+            
+        </a> -->
+        <p class="text-start p-2">Description: {{image.image_description}}</p>
+        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#myModal{{ forloop.counter }}">
+            <p class="text-start p-2 pt-0 pb-0">See More</p>
+        </a> -->
+    </div>
+    <!-- <div class="modal fade p-0" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <h4 class="modal-title">{{image.image_code}}</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    <img class="modal-triggered" src="{% static image.image_path %}">
+                    <p>Description: {{image.image_description}}</p>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    {% endfor %}
+</div>
+
+{% endblock %}

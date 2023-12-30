@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-6 p-4">
+        <h4 class="text">
+            <a href="{% url 'standard_with_params'  type='standard' orientation='horizontal' %}">
+                Horizontal
+            </a>
+        </h4>
+    </div>
+    <div class="col-6 p-4">
+        <h4 class="text">
+            <a href="{% url 'standard_with_params' type='standard' orientation='vertical' %}">
+                Vertical
+            </a>
+        </h4>
+    </div>
+</div>
+<div class="row image-container">
+    {% for image in images %}
+    <div class="col-12 col-md-3 p-2">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal{{ forloop.counter }}">
+            <img class="img-fluid" src="{% static image.image_path %}">
+        </a>
+        <p class="text-start p-2">Description: {{image.image_description}}</p>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#myModal{{ forloop.counter }}">
+            <p class="text-start p-2 pt-0 pb-0">See More</p>
+        </a>
+
+    </div>
+    <div class="modal fade p-0" id="myModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">{{image.image_code}}</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img class="modal-triggered" src="{% static image.image_path %}">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p id="imageWidth_{{ forloop.counter }}" data-original-width="{{ image.image_width }}" data-original-height="{{ image.image_height}}">
+                                Art_Width: {{image.image_width}} Inch
+                            </p>
+                            <select id="dimensionSelector_{{ forloop.counter }}" style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;" onchange="updateDimensionAndCalculate({{ forloop.counter }})">
+                                <option value="Inch">Inch</option>
+                                <option value="Centimeter">Centimeter</option>
+                            </select>
+                            <p id="imageHeight_{{ forloop.counter}}">Art_Height: {{image.image_height}} Inch</p>
+                            <p>Art_Weight: {{image.image_weight}} Kg</p>
+                            <p>Type: {{image.image_type}}</p>
+                            <p>Description: {{image.image_description}}</p>
+                            <div style="display: flex;justify-content: center;">
+                                <p id="imagePrice_{{ forloop.counter }}" data-original-price="{{ image.image_price }}">Art_Price: {{image.image_price}} USD</p>
+                                <!-- Add the following code after the p tag with id="imagePrice" -->
+                                <select id="currencySelector_{{ forloop.counter }}" style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;" onchange="updateCurrencyAndCalculate({{ forloop.counter }})">
+                                    <option value="USD">USD</option>
+                                    <option value="MMK">MMK</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+
+                    <a href="{% url 'checkout' image.id %}" type="button" class="btn">
+                        Buy Now
+                    </a>
+                    <button type="button" class="btn text-white" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

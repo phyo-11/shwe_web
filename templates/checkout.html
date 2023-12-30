@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<h3 class="text p-3">Checkout for Art: {{image.image_code}}</h3>
+<div class="row g-0">
+    <div class="col-12 col-md-6 p-3">
+        <img class="img-fluid" src="{% static image.image_path %}" alt="">
+    </div>
+    <div class="col-12 col-md-6 p-3">
+        <p class="text">Art_Code: {{image.image_code}}</p>
+        <p class="text">Art_Size: {{image.image_width}} x {{image.image_height}} inch </p>
+        <p class="text">Art_Price: {{image.image_price}} USD</p>
+        <p class="text">Description: {{image.image_description}} </p>
+
+        <!-- <button>Purchase</button> -->
+        <div class="paypal-button">
+            {{paypal.render}}
+        </div>
+        <div class="text p-3 d-flex align-items-start">
+            <a href="viber://chat?number=+959765538599" target="_blank" rel="noopener noreferrer">
+                <img src="{% static 'viber_logo.png' %}" alt="Viber Icon">
+                <p class="p-3">Contact us for more information. </p>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
