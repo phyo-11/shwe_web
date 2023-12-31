@@ -43,16 +43,19 @@
                 </div>
 
                 <!-- Modal Body -->
-                                <div class="modal-body">
+                <div class="modal-body">
                     <div class="row">
                         <div class="col-12 col-md-6">
                             <img class="modal-triggered" src="{% static image.image_path %}">
                         </div>
                         <div class="col-12 col-md-6">
-                            <p id="imageWidth_{{ forloop.counter }}" data-original-width="{{ image.image_width }}" data-original-height="{{ image.image_height}}">
+                            <p id="imageWidth_{{ forloop.counter }}" data-original-width="{{ image.image_width }}"
+                                data-original-height="{{ image.image_height}}">
                                 Art_Width: {{image.image_width}} Inch
                             </p>
-                            <select id="dimensionSelector_{{ forloop.counter }}" style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;" onchange="updateDimensionAndCalculate({{ forloop.counter }})">
+                            <select id="dimensionSelector_{{ forloop.counter }}"
+                                style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;"
+                                onchange="updateDimensionAndCalculate({{ forloop.counter }})">
                                 <option value="Inch">Inch</option>
                                 <option value="Centimeter">Centimeter</option>
                             </select>
@@ -61,12 +64,32 @@
                             <p>Type: {{image.image_type}}</p>
                             <p>Description: {{image.image_description}}</p>
                             <div style="display: flex;justify-content: center;">
-                                <p id="imagePrice_{{ forloop.counter }}" data-original-price="{{ image.image_price }}">Art_Price: {{image.image_price}} USD</p>
+                                <p id="imagePrice_{{ forloop.counter }}" data-original-price="{{ image.image_price }}">
+                                    Art_Price: {{image.image_price}} USD</p>
                                 <!-- Add the following code after the p tag with id="imagePrice" -->
-                                <select id="currencySelector_{{ forloop.counter }}" style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;" onchange="updateCurrencyAndCalculate({{ forloop.counter }})">
+                                <select id="currencySelector_{{ forloop.counter }}"
+                                    style="background-color: #E1CC67; border: 1px solid #734d1f; color: #734d1f;"
+                                    onchange="updateCurrencyAndCalculate({{ forloop.counter }})">
                                     <option value="USD">USD</option>
                                     <option value="MMK">MMK</option>
                                 </select>
+                            </div>
+                            <h5 class="text-start text mt-5">Please contact us for more information. </h5>
+                            <div class="chat-icon-container p-1">
+                                <a class="p-2" href="viber://chat?number=+959765538599" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'viber_logo.png' %}" alt="Viber Icon">
+                                </a>
+
+                                <a class="p-2" href="https://wa.me/959765538599" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'whatsapp_logo.png' %}" alt="WhatsApp Icon">
+                                </a>
+
+                                <a class="p-2" href="mailto:myanmarartgallery96@gmail.com?" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'email_logo.png' %}" alt="Email Icon">
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -19,3 +19,8 @@ class Image(models.Model):
 
     def __str__(self):
         return self.image_code
+
+
+class VisitorCount(models.Model):
+    date = models.DateField(unique=True)
+    count = models.PositiveIntegerField(default=0)

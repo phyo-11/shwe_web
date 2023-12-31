@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0r3j^8*vr$=gslu($n4d$bz@o4!1m4qh31o9kjq2muciyz2z89"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Set Ture so the static files work in development mode
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.myanmarartgallery.store']
+ALLOWED_HOSTS = ['www.myanmarartgallery.store', '127.0.0.1']
 
 
 # Application definition
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "middlewares.visitor_count_middleware.VisitorCountMiddleware",
 ]
 
 ROOT_URLCONF = "shwe_web.urls"
@@ -116,7 +118,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = "/static/"
@@ -137,3 +138,5 @@ PAYPAL_RECEIVER_EMAIL = 'phyonaing11@gmail.com'
 PAYPAL_TEST = False
 
 PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/the-proton-guy/image/upload/v1685882223/paypal-PhotoRoom_v9pay7.png'
+
+DEVELOPMENT_IP = '127.0.0.1'

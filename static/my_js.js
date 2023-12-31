@@ -4,8 +4,8 @@ function updateDimensionAndCalculate(imageIndex) {
     var originalWidth = parseFloat(document.getElementById("imageWidth_" + imageIndex).getAttribute("data-original-width"));
     var originalHeight = parseFloat(document.getElementById("imageWidth_" + imageIndex).getAttribute("data-original-height"));
     var calculatedDimension = calculateDimension(originalWidth, originalHeight, selectedDimension);
-    document.getElementById("imageWidth_" + imageIndex).innerText = "Width(Picture): " + calculatedDimension.calculatedWidth + " " + selectedDimension;
-    document.getElementById("imageHeight_" + imageIndex).innerText = "Height(Picture): " + calculatedDimension.calculatedHeight + " " + selectedDimension;
+    document.getElementById("imageWidth_" + imageIndex).innerText = "Art_Width: " + calculatedDimension.calculatedWidth + " " + selectedDimension;
+    document.getElementById("imageHeight_" + imageIndex).innerText = "Art_Height: " + calculatedDimension.calculatedHeight + " " + selectedDimension;
 }
 
 function calculateDimension(originalWidth, originalHeight, selectedDimension) {
@@ -33,7 +33,7 @@ function updateCurrencyAndCalculate(imageIndex) {
     var selectedCurrency = document.getElementById("currencySelector_" + imageIndex).value;
     var originalPrice = parseFloat(document.getElementById("imagePrice_" + imageIndex).getAttribute("data-original-price"));
     var calculatedPrice = calculatePrice(originalPrice, selectedCurrency);
-    document.getElementById("imagePrice_" + imageIndex).innerText = "Price(Picture): " + calculatedPrice.toFixed(2) + " " + selectedCurrency;
+    document.getElementById("imagePrice_" + imageIndex).innerText = "Art_Price: " + calculatedPrice.toFixed(2) + " " + selectedCurrency;
 }
 
 function calculatePrice(originalPrice, selectedCurrency) {
