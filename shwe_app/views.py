@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from . models import Image
 import random
+from .models import VisitorCount
 
 
 def home(request):
+    count_object, created = VisitorCount.objects.get_or_create()
+    visitor_count = count_object.count
     images = Image.objects.all()
-    return render(request, 'home.html', {'images': images})
+    return render(request, 'home.html', {'images': images, 'visitor_count': visitor_count})
 
 
 def gallery(request):
