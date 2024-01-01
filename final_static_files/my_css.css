@@ -166,3 +166,15 @@ a:active {
     padding: 5px;
     width: 300px;
 }
+
+.chat-icon-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 80px;
+}
+
+.chat-icon-container img {
+    height: 40px;
+
+}

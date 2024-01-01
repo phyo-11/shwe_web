@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-0r3j^8*vr$=gslu($n4d$bz@o4!1m4qh31o9kjq2muciyz2z89
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Set Ture so the static files work in development mode
-DEBUG = True
+DEBUG = False
+DEVELOPMENT_IP = '192.168.178.152'
 
 ALLOWED_HOSTS = ['www.myanmarartgallery.store', '127.0.0.1']
 
@@ -139,4 +140,4 @@ PAYPAL_TEST = False
 
 PAYPAL_BUY_BUTTON_IMAGE = 'https://res.cloudinary.com/the-proton-guy/image/upload/v1685882223/paypal-PhotoRoom_v9pay7.png'
 
-DEVELOPMENT_IP = '127.0.0.1'
+
