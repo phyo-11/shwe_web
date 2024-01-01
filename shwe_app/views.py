@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseServerError
 from .models import Image, VisitorCount
 from django.utils import timezone
+import random
 
 def home(request):
     try:
