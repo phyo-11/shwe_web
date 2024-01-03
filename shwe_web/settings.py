@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-0r3j^8*vr$=gslu($n4d$bz@o4!1m4qh31o9kjq2muciyz2z89
 # SECURITY WARNING: don't run with debug turned on in production!
 # Set Ture so the static files work in development mode
 DEBUG = False
-DEVELOPMENT_IP = '192.168.178.152'
+
 
 ALLOWED_HOSTS = ['www.myanmarartgallery.store', '127.0.0.1']
 
@@ -53,7 +53,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "middlewares.visitor_count_middleware.VisitorCountMiddleware",
 ]
 
 ROOT_URLCONF = "shwe_web.urls"

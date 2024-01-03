@@ -1,30 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponseServerError
-from .models import Image, VisitorCount
-from django.utils import timezone
+from .models import Image
 import random
 
 def home(request):
-    try:
-        # Get or create the VisitorCount object for today
-        count_object, created = VisitorCount.objects.get_or_create(date=timezone.now().date())
-
-        # Increment the count
-        count_object.count += 1
-        count_object.save()
-
-    except Exception as e:
-        # Handle other exceptions (e.g., database errors) as needed
-        return HttpResponseServerError(f"Error: {e}")
-
-    # Retrieve the updated count
-    visitor_count = count_object.count
 
     # Retrieve all images
     images = Image.objects.all()
 
     # Render the template with the data
-    return render(request, 'home.html', {'images': images, 'visitor_count': visitor_count, 'created': created})
+    return render(request, 'home.html', {'images': images})
 
 
 

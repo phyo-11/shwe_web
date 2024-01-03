@@ -21,6 +21,4 @@ class Image(models.Model):
         return self.image_code
 
 
-class VisitorCount(models.Model):
-    date = models.DateField(unique=True)
-    count = models.PositiveIntegerField(default=0)
+
