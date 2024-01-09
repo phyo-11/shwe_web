@@ -13,11 +13,48 @@
         <p class="text">Art_Size: {{image.image_width}} x {{image.image_height}} inch </p>
         <p class="text">Art_Price: {{image.image_price}} USD</p>
         <p class="text">Description: {{image.image_description}} </p>
+        <p class="p-0 text mt-2" style="font-weight: bold;">Note: All the information above pertains to the artwork only and does not include the frame.</p>
+
+       <p class="text">Local Delivery: Free of Charge (3-7 days)</p>
+        <p class="text">International Delivery: Shipping Charges Apply</p>
+
+                                    <h5 class="text-start text mt-5">Please contact us for more information.</h5>
+                            <div class="chat-icon-container p-1">
+                                <a class="p-2" href="viber://chat?number=+959765538599" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'viber_logo.png' %}" alt="Viber Icon">
+                                </a>
+
+                                <a class="p-2" href="https://wa.me/959765538599" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'whatsapp_logo.png' %}" alt="WhatsApp Icon">
+                                </a>
+
+                                <a class="p-2" href="mailto:myanmarartgallery96@gmail.com?" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img class="img-fluid" src="{% static 'email_logo.png' %}" alt="Email Icon">
+                                </a>
+                            </div>
 
         <!-- <button>Purchase</button> -->
-        <div class="paypal-button">
-            {{paypal.render}}
+        <div class="row g-0 d-flex justify-content-between">
+            <div class="paypal-button col-12 col-md-6">
+                {{paypal.render}}
+            </div>
+<div class="kpay-qr-container col-12 col-md-6">
+    <img class="img-fluid d-block" src="{% static 'kpay_qr.jpg' %}" alt="KPay QR code">
+</div>
+
+
         </div>
+
+
+
+
+
+
+
+
     </div>
 </div>
 

@@ -61,9 +61,7 @@
                             </select>
                             <p id="imageHeight_{{ forloop.counter}}">Art_Height: {{image.image_height}} Inch</p>
                             <p>Art_Weight: {{image.image_weight}} Kg</p>
-                            <p>Type: {{image.image_type}}</p>
-                            <p>Description: {{image.image_description}}</p>
-                            <div style="display: flex;justify-content: center;">
+                                                        <div style="display: flex;justify-content: center;">
                                 <p id="imagePrice_{{ forloop.counter }}" data-original-price="{{ image.image_price }}">
                                     Art_Price: {{image.image_price}} USD</p>
                                 <!-- Add the following code after the p tag with id="imagePrice" -->
@@ -74,6 +72,13 @@
                                     <option value="MMK">MMK</option>
                                 </select>
                             </div>
+                            <p>Type: {{image.image_type}}</p>
+                            <p>Description: {{image.image_description}}</p>
+
+                            <p class="text" style="font-weight: bold;">Note: All the information above pertains to the artwork only and does not include the frame.</p>
+
+<p class="text">Local Delivery: Free delivery for orders over 50000 MMK (3-7 days). For orders below, standard delivery charges apply.</p>
+        <p class="text">International Delivery: Shipping charges apply.</p>
 
                             <h5 class="text-start text mt-5">Please contact us for more information. </h5>
                             <div class="chat-icon-container p-1">
